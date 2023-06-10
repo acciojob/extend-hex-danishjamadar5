@@ -1,7 +1,13 @@
 const extendHex = (shortHex) => {
-  // write your code here
+  const hex = shortHex.replace('#', '').toLowerCase();
+  const colorComponents = hex.split('');
+  const fullHex = colorComponents
+    .map((component) => component.repeat(2))
+    .join('');
+
+  return `#${fullHex}`;
 };
 
-// Do not change the code below.
+// Testing the function
 const shortHex = prompt("Enter Short Hex.");
 alert(extendHex(shortHex));
